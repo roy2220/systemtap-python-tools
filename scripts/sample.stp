@@ -1,7 +1,11 @@
 global stack_agg
 
-probe perf.sw.task_clock.process {
-    stack_agg[sprint_merged_stack()] <<< 1;
+probe timer.profile {
+    merged_stack = sprint_merged_stack();
+
+    if (merged_stack != "") {
+        stack_agg[merged_stack] <<< 1;
+    }
 }
 
 

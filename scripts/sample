@@ -28,8 +28,8 @@ def main():
 
     stap_cmd.extend(build_stap_args(main_pid))
 
-    limits = ['-D', 'MAXSTRINGLEN=4096', '-D', 'MAXBACKTRACE=200',
-              '-D', 'MAXMAPENTRIES=10240']
+    limits = ['-D', 'MAXSTRINGLEN=2048', '-D', 'MAXBACKTRACE=200',
+              '-D', 'MAXMAPENTRIES=5000', '-D', 'MAXACTION=100000', '--skip-badvars']
 
     stap_cmd.extend(limits)
     stap_cmd.extend(extra_args)

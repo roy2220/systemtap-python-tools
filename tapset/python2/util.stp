@@ -30,6 +30,7 @@ function unpack_ustack () {
     delete ustack;
     i = 0;
 
+/*
     // try throwing the kernel stack in there too
     if (!user_mode()) {
         kbt = backtrace();
@@ -40,6 +41,7 @@ function unpack_ustack () {
             addr = tokenize("", " ");
         }
     }
+*/
 
     bt = ubacktrace();
     addr = tokenize(bt, " ");
